@@ -8,20 +8,20 @@ The script retrieves information about commonly used AWS resources and displays 
 
 ## Objectives
 
-- Learn Bash Shell Scripting
-- Use AWS CLI to interact with AWS services
-- Automate repetitive AWS monitoring tasks
-- Practice Linux command-line operations
-- Build a beginner-friendly DevOps project
+* Learn Bash Shell Scripting
+* Use AWS CLI to interact with AWS services
+* Automate repetitive AWS monitoring tasks
+* Practice Linux command-line operations
+* Build a beginner-friendly DevOps project
 
 ---
 
 ## AWS Services Used
 
-- Amazon S3
-- Amazon EC2
-- AWS Lambda
-- AWS IAM
+* Amazon S3
+* Amazon EC2
+* AWS Lambda
+* AWS IAM
 
 ---
 
@@ -39,30 +39,6 @@ AWS Account Resources
  ├── EC2 Instances
  ├── Lambda Functions
  └── IAM Users
-```
-
----
-
-## Project Files
-
-```text
-aws-resource-tracker-shell-script/
-│
-├── README.md
-│
-├── aws-resource-tracker.sh
-│
-├── commands/
-│   └── commands-used.md
-│
-├── screenshots/
-│   ├── 01-script-file.png
-│   ├── 02-permission-command.png
-│   ├── 03-script-execution.png
-│   └── 04-cron-service-status.png
-│
-└── output/
-    └── resource-tracker-output.txt
 ```
 
 ---
@@ -85,6 +61,8 @@ aws lambda list-functions
 
 echo "Printing IAM Users"
 aws iam list-users
+
+echo "Resource tracking completed successfully"
 ```
 
 ---
@@ -93,11 +71,11 @@ aws iam list-users
 
 Before running the script, ensure the following are installed and configured:
 
-- Linux (Ubuntu)
-- AWS CLI
-- AWS Account
-- IAM User with AWS CLI permissions
-- Configured AWS Credentials
+* Linux (Ubuntu)
+* AWS CLI
+* AWS Account
+* IAM User with AWS CLI permissions
+* Configured AWS Credentials
 
 Verify AWS CLI installation:
 
@@ -164,16 +142,22 @@ UserName: admin
 
 Cron jobs can be used to schedule the script to run automatically at fixed intervals.
 
-Example:
+Open the cron editor:
 
 ```bash
 crontab -e
 ```
 
-Run every day at 9:00 AM:
+Schedule the script to run every day at 6:00 PM:
 
 ```bash
-0 9 * * * /home/ubuntu/aws-resource-tracker.sh
+0 18 * * * /home/ubuntu/aws-resource-tracker.sh
+```
+
+View existing cron jobs:
+
+```bash
+crontab -l
 ```
 
 Check cron service status:
@@ -212,38 +196,24 @@ systemctl status cron
 
 ## Commands Used
 
-### AWS CLI
+See:
 
-```bash
-aws s3 ls
-aws ec2 describe-instances
-aws lambda list-functions
-aws iam list-users
-```
-
-### Linux Commands
-
-```bash
-vim aws-resource-tracker.sh
-chmod +x aws-resource-tracker.sh
-./aws-resource-tracker.sh
-systemctl status cron
-crontab -e
-crontab -l
+```text
+commands/commands-used.md
 ```
 
 ---
 
 ## Skills Demonstrated
 
-- Linux Fundamentals
-- Bash Shell Scripting
-- AWS CLI
-- AWS Resource Monitoring
-- Task Automation
-- Infrastructure Visibility
-- DevOps Fundamentals
-- GitHub Documentation
+* Linux Fundamentals
+* Bash Shell Scripting
+* AWS CLI
+* AWS Resource Monitoring
+* Task Automation
+* Infrastructure Visibility
+* DevOps Fundamentals
+* GitHub Documentation
 
 ---
 
@@ -251,29 +221,29 @@ crontab -l
 
 Through this project, I learned:
 
-- How shell scripts automate repetitive tasks
-- How to interact with AWS services using AWS CLI
-- How to manage file permissions in Linux
-- How to execute Bash scripts
-- How to schedule automated tasks using Cron Jobs
-- How to document a project professionally using GitHub
+* How shell scripts automate repetitive tasks
+* How to interact with AWS services using AWS CLI
+* How to manage file permissions in Linux
+* How to execute Bash scripts
+* How to schedule automated tasks using Cron Jobs
+* How to document a project professionally using GitHub
 
 ---
 
 ## Future Improvements
 
-- Store output in log files
-- Export results to CSV format
-- Add error handling
-- Send email notifications
-- Monitor additional AWS services
-- Generate automated reports
+* Store output in log files
+* Export results to CSV format
+* Add error handling
+* Send email notifications
+* Monitor additional AWS services
+* Generate automated reports
 
 ---
 
 ## Disclaimer
 
-This project was created for learning and educational purposes. Commands and outputs may vary depending on AWS resources, account configuration, AWS CLI version, and Linux distribution.
+This project was created for learning and educational purposes. Commands, outputs, and AWS resources may vary depending on account configuration, AWS CLI version, permissions, and Linux distribution.
 
 ---
 
